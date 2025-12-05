@@ -23,6 +23,7 @@
     position: relative;
     display: block;
     height: 100%;
+    transition: color 300ms ease;
 
     font-size: 12px;
     font-weight: 500;
@@ -33,6 +34,10 @@
 
     &:hover {
       color: $color-button-bg;
+    }
+
+    @media (max-width: 1023px) {
+      display: none;
     }
   }
 }

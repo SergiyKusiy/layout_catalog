@@ -8,6 +8,13 @@
   background-color: $color-white;
 
   text-align: center;
+  transition: transform 300ms ease;
+  transform-origin: center center;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 
   &__image {
     display: block;
@@ -26,6 +33,12 @@
     line-height: 18px;
     color: $color-text-main;
     text-align: left;
+
+    transition: color 300ms ease;
+  }
+
+  &:hover .card__title {
+    color: #34568b;
   }
 
   &__code {
@@ -99,10 +112,15 @@
     color: $color-white;
     text-decoration: none;
 
+    transition:
+      background-color 300ms ease,
+      color 300ms ease,
+      border 300ms ease;
+
     &:hover {
-      border: 1px solid $color-button-bg;
-      background-color: $color-white;
-      color: $color-button-bg;
+      background-color: #fff;
+      color: #00acdc;
+      border: 1px solid #00acdc;
     }
   }
 }

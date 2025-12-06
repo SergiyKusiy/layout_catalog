@@ -23,37 +23,39 @@
     position: relative;
     display: block;
     height: 100%;
-    transition: color 300ms ease;
 
     font-size: 12px;
     font-weight: 500;
     line-height: 60px;
-    color: $color-text-main;
     text-transform: uppercase;
     text-decoration: none;
 
+    color: $color-text-main;
+    transition: color 300ms ease;
+
     &:hover {
-      color: $color-button-bg;
+      color: $main-color;
     }
 
+    /* Медіа: ховаємо лінки на малих екранах */
     @media (max-width: 1023px) {
       display: none;
     }
+
+    /* Modifier: active state (BEM) */
+    &.is-active {
+      color: $main-color;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        border-radius: 2px;
+        background-color: $main-color;
+      }
+    }
   }
-}
-
-.is-active::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 4px;
-
-  border-radius: 2px;
-  background-color: $main-color;
-}
-
-.is-active {
-  color: $main-color;
 }
